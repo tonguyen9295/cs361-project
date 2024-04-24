@@ -1,0 +1,178 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.style-Link {
+  text-decoration: none;
+  color: black;
+}
+
+.table-container {
+  display: flex;
+}
+
+.table-style {
+  border-collapse: collapse;
+  margin: auto;
+}
+
+.table-container thead tr {
+  background-color: lightslategray;
+  color: black;
+  text-align: center;
+}
+
+.table-container th, td {
+  padding: 1em;
+}
+
+.table-container tbody tr:nth-of-type(even) {
+  background-color: lightblue;
+}
+
+.table-container tbody th, tr {
+  font-weight: normal;
+}
+
+.button-container {
+  padding-top: 2%;
+  display: flex;
+  padding-bottom: 3%;
+}
+
+.home-add-workout {
+  margin: auto;
+  font-size: 150%;
+  background-color: lightgrey;
+  border-radius: 20px;
+  padding: 1%;
+}
+
+.home-add-exercise {
+  margin: auto;
+  font-size: 150%;
+  background-color: lightgrey;
+  border-radius: 20px;
+  padding: 1%;
+}
+
+.home-cancel-exercise {
+  margin: auto;
+  font-size: 150%;
+  background-color: lightgrey;
+  border-radius: 20px;
+  padding: 1%;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 4%;
+}
+
+.add-exercise-row {
+  padding: 1rem;
+}
+
+.add-exercise-row > label {
+  font-size: 1.2rem;
+  text-align: left;
+  margin-right: 5%;
+}
+
+.add-exercise-row > input {
+  border-radius: 5px;
+  border: 1px solid rgb(204, 204, 204);
+  font-size: 140%;
+}
+
+select {
+  padding: 0.5rem;
+  border: solid 1px rgb(204, 204, 204);
+}
+
+ul {
+  list-style-position: inside;
+}
+
+ol {
+  list-style-position: inside;
+}
+
+li {
+  padding: 4%;
+  background-color: rgba(128, 128, 128, 0.107);
+}
+
+.help-page-order-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around
+}
+
+.fancy-help-links {
+  text-decoration: none;
+}
+
+.features-list-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.current-features-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.new-features-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.list-title {
+  margin-bottom: 3%;
+  font-size: larger;
+}
+
+.align-center {
+  padding-left: 1%;
+  text-align: center;
+  font-weight: bold;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

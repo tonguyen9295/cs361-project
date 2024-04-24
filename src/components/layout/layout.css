@@ -1,0 +1,38 @@
+.layout-content {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.layout-body {
+    flex-grow: 1;
+    background-color: rgba(211, 211, 211, 0.721);
+}
+
+.navbar {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background-color: gray;
+}
+
+.navbar-brand-logo {
+    width: 10%;
+    height: 10%;
+    max-height: 10em;
+}
+
+.navbar-help-logo {
+    margin-top: 0.2%;
+    width: 10%;
+    height: 10%;
+    border-radius: 50%;
+    max-height: 10em;
+}
+
+.footer {
+    text-align: center;
+    background-color: gray;
+    font-size: 120%;
+}
