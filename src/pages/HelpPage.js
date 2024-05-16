@@ -34,7 +34,7 @@ function HelpPage() {
                         <button className="home-add-exercise" onClick={() => navigate("/")}>Go Back Home</button>
                     </div>
                     <div>
-                        <button className="home-cancel-exercise" onClick={() => navigate("/under-construction")}>Need More Help?</button>
+                        <button className="home-cancel-exercise" onClick={() => navigate("/contact-us")}>Need More Help? Click here!</button>
                     </div>
                 </div>
             </div>

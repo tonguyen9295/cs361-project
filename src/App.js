@@ -8,6 +8,8 @@ import HelpPage from './pages/HelpPage';
 import AddWorkout from './components/crud/AddWorkout';
 import AddExercise from './components/crud/AddExercise';
 import UnderConstruction from './pages/UnderConstruction';
+import ContactUsPage from './pages/ContactUsPage';
+import UpdateExercise from './components/crud/UpdateExercise';
 
 function App() {
     return (
@@ -20,6 +22,8 @@ function App() {
                 <Route path="/create-workout" element={<AddWorkout />} />
                 <Route path="/add-exercise/:specificworkout" element={<AddExercise />} />
                 <Route path="/under-construction" element={<UnderConstruction />} />
+                <Route path="/contact-us" element={<ContactUsPage />} />
+                <Route path="/update-exercise/:specificworkout/:sessionexercise" element={<UpdateExercise />} />
             </Routes>
         </Router>
         </div>

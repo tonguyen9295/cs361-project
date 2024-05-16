@@ -168,6 +168,25 @@ li {
   font-weight: bold;
 }
 
+.random-exercise-generator-description {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-size: larger;
+}
+
+.search-drop-down {
+  border: 1px solid black;
+  border-radius: 12px;
+}
+
+.search-drop-down-select {
+  background-color: transparent;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

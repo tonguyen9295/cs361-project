@@ -1,9 +1,10 @@
 import React from "react";
 import Layout from "../components/layout/layout";
 import { Link, useNavigate, useLocation, redirect } from "react-router-dom";
-import { RxBorderSolid } from "react-icons/rx";
+import { RxBorderSolid, RxPencil2 } from "react-icons/rx";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { SearchDropdown } from '../components/crud/exerciseByMuscle';
 
 // create exercise page that shows list of exercises for a workout
 function ExercisePage() {
@@ -40,6 +41,19 @@ function ExercisePage() {
         }
     };
 
+    // get random exercise by muscle
+    const [renderMuscleExerciseGroup, setRenderMuscleExerciseGroup] = useState(false);
+    const [muscleExerciseGroup, setMuscleGroup] = useState([]);
+    const handleMuscleGroup = async (muscleGroup) => {
+        try {
+            const response = await axios.get(`http://localhost:3002/exercise/${muscleGroup}`);
+            setMuscleGroup(response.data);
+            setRenderMuscleExerciseGroup(true);
+        } catch (err) {
+            console.error('Error fetching data:', err);
+        }
+    };
+
     return (
         <Layout>
             <div>
@@ -55,6 +69,7 @@ function ExercisePage() {
                                     <th>Weight (lbs)</th>
                                     <th>Specific Workout Session</th>
                                     <th>Delete</th>
+                                    <th>Update</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -71,10 +86,42 @@ function ExercisePage() {
                                                 deleteData(item.sessionExercises);
                                             } 
                                             }/></th>
+                                        <th><Link to={`/update-exercise/${item.workout}/${item.sessionExercises}`}><RxPencil2/></Link></th>
                                     </tr>
                                 ))}
                             </tbody>
                         </table>
+                    </div>
+                </div>
+                <div className="random-exercise-generator-description">
+                    <div>
+                        <h4>
+                            Random Exercise Generator
+                        </h4>
+                        <p>
+                            Choose a muscle to randomly generate an exercise for workout inspiration!
+                        </p>
+                        <SearchDropdown onSelect={handleMuscleGroup}/>
+                    </div>
+                    <div>
+                        {renderMuscleExerciseGroup ? 
+                        <div>
+                            <h4>
+                            Name of Exercise
+                            </h4>
+                            <p>
+                                {muscleExerciseGroup.name}
+                            </p>
+                            <h4>
+                                How to Perform the Exercise
+                            </h4>
+                            <p style={{width: "50%", marginLeft: "auto", marginRight: "auto"}}>
+                                {muscleExerciseGroup.instructions}
+                            </p>
+                        </div> : 
+                        <div>
+                        </div>
+                        }
                     </div>
                 </div>
                 <div className="button-container">
