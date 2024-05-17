@@ -43,5 +43,5 @@ app.post("/contact-us/response", async (req, res) => {
 
 // turn on microservice D
 app.listen(PORT, () => { 
-    console.log(`Microservice A is live at port ${PORT}`);
+    console.log(`Microservice D is live at port ${PORT}`);
 });
