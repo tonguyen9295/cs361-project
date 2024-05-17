@@ -40,7 +40,7 @@ app.get("/exercise/:muscle", async (req, res) => {
     }
 })
 
-// turn on microservice A
+// turn on microservice B
 app.listen(PORT, () => { 
-    console.log(`Microservice A is live at port ${PORT}`);
+    console.log(`Microservice B is live at port ${PORT}`);
 });
