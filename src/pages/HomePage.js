@@ -4,6 +4,7 @@ import { RxBorderSolid, RxPlus } from "react-icons/rx";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import moment from "moment";
 
 // create home page that shows list of workouts
 function HomePage() {
@@ -56,7 +57,7 @@ function HomePage() {
                                 {data.map((item, index) => (
                                     <tr key={index}>
                                         <th><Link className="style-Link" to={`/exercise-page/${item.workout}`}>{item.workout}</Link></th>
-                                        <th>{item.dateOfWorkout}</th>
+                                        <th>{moment(item.dateOfWorkout).utc().format("YYYY-MM-DD")}</th>
                                         <th><RxBorderSolid onClick={() => 
                                             {
                                             if (window.confirm('Are you SURE you want to delete this workout? This action is IRREVERSIBLE!')) 

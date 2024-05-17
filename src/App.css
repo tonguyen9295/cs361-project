@@ -175,6 +175,11 @@ li {
   font-size: larger;
 }
 
+.contact-us-generator-description {
+  justify-content: center;
+  font-size: larger;
+}
+
 .search-drop-down {
   border: 1px solid black;
   border-radius: 12px;

@@ -115,8 +115,8 @@ function ExercisePage() {
                             <h4>
                                 How to Perform the Exercise
                             </h4>
-                            <p style={{width: "50%", marginLeft: "auto", marginRight: "auto"}}>
-                                {muscleExerciseGroup.instructions}
+                            <p style={{whiteSpace: "pre-line", width: "50%", marginLeft: "auto", marginRight: "auto"}}>
+                                {muscleExerciseGroup.instructions.split('.').join(". \n\n")}
                             </p>
                         </div> : 
                         <div>

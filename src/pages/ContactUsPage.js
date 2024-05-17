@@ -43,30 +43,34 @@ function ContactUsPage() {
     return (
         <Layout>
             <div>
-                <div className="random-exercise-generator-description">
-                    <h1>
-                        Contact Us Page
-                    </h1>
-                    <p>
-                        Please let us know what questions and concerns you have, and we will get back to you as soon as we can to help you!
-                    </p>
-                    <form action="" method="get" className="add-form">
-                        <h3>Complete form to request for a response from our team!!!</h3>
-                        <div className="form-container">
-                            <div className="add-exercise-row">
-                                <label for="userName">Name:  </label>
-                                <input type="text" name="userName" id="userName"  onChange={handleContactUsAttributes} required />
+                <div className="contact-us-generator-description">
+                    <div>
+                        <h1>
+                            Contact Us Page
+                        </h1>
+                        <p>
+                            Please let us know what questions and concerns you have, and we will get back to you as soon as we can to help you!
+                        </p>
+                    </div>
+                    <div>
+                        <form action="" method="get" className="add-form">
+                            <h3>Complete form to request for a response from our team!!!</h3>
+                            <div className="form-container">
+                                <div className="add-exercise-row">
+                                    <label for="userName">Name:  </label>
+                                    <input type="text" name="userName" id="userName"  onChange={handleContactUsAttributes} required />
+                                </div>
+                                <div className="add-exercise-row">
+                                    <label for="userEmail">Email:  </label>
+                                    <input type="text" name="userEmail" id="userEmail"  onChange={handleContactUsAttributes} required />
+                                </div>
+                                <div className="add-exercise-row">
+                                    <label for="userMessage">Message:  </label>
+                                    <textarea rows="10" cols="50" type="text" name="userMessage" id="userMessage"  onChange={handleContactUsAttributes} required >Type your questions/concerns here</textarea>
+                                </div>
                             </div>
-                            <div className="add-exercise-row">
-                                <label for="userEmail">Email:  </label>
-                                <input type="text" name="userEmail" id="userEmail"  onChange={handleContactUsAttributes} required />
-                            </div>
-                            <div className="add-exercise-row">
-                                <label for="userMessage">Message:  </label>
-                                <input type="text" name="userMessage" id="userMessage"  onChange={handleContactUsAttributes} required />
-                            </div>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                     <div>
                         {haveSubmitted ? 
                             <div>

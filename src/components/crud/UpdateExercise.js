@@ -52,39 +52,35 @@ function UpdateExercise() {
     };
 
 return (
-    <div>
-      <form action="" method="get" className="add-form">
-        <h3>Update Exercise</h3>
-        <div className="form-container">
-            <div className="add-exercise-row">
-                <label for="exerciseName">Name:  </label>
-                <input type="text" name="exerciseName" id="exerciseName" value={exerciseAttributes.exerciseName} onChange={updateFormValues} />
+    <Layout>
+        <div>
+            <form action="" method="get" className="add-form">
+            <h3>Update Exercise</h3>
+            <div className="form-container">
+                <div className="add-exercise-row">
+                    <label for="exerciseName">Name:  </label>
+                    <input type="text" name="exerciseName" id="exerciseName" value={exerciseAttributes.exerciseName} onChange={updateFormValues} />
+                </div>
+                <div className="add-exercise-row">
+                    <label for="exerciseSets">Sets:  </label>
+                    <input type="text" name="exerciseSets" id="exerciseSets" value={exerciseAttributes.exerciseSets} onChange={updateFormValues} />
+                </div>
+                <div className="add-exercise-row">
+                    <label for="exerciseRepetitions">Repetitions:  </label>
+                    <input type="text" name="exerciseRepetitions" id="exerciseRepetitions" value={exerciseAttributes.exerciseRepetitions} onChange={updateFormValues} />
+                </div>
+                <div className="add-exercise-row">
+                    <label for="exerciseWeight">Weight:  </label>
+                    <input type="text" name="exerciseWeight" id="exerciseWeight" value={exerciseAttributes.exerciseWeight} onChange={updateFormValues} />
+                </div>
+            </div>
+            </form>
+            <div className="features-list-container">
+                <button className="home-add-exercise"  onClick={handleSubmissionOfUpdate}>SUBMIT</button>
+                <button className="home-cancel-exercise" onClick={() => goBackToExercisePage(`/exercise-page/${specificWorkout}`)}>CANCEL</button>
             </div>
         </div>
-        <div className="form-container">
-            <div className="add-exercise-row">
-                <label for="exerciseSets">Sets:  </label>
-                <input type="text" name="exerciseSets" id="exerciseSets" value={exerciseAttributes.exerciseSets} onChange={updateFormValues} />
-            </div>
-        </div>
-        <div className="form-container">
-            <div className="add-exercise-row">
-                <label for="exerciseRepetitions">Repetitions:  </label>
-                <input type="text" name="exerciseRepetitions" id="exerciseRepetitions" value={exerciseAttributes.exerciseRepetitions} onChange={updateFormValues} />
-            </div>
-        </div>
-        <div className="form-container">
-            <div className="add-exercise-row">
-                <label for="exerciseWeight">Weight:  </label>
-                <input type="text" name="exerciseWeight" id="exerciseWeight" value={exerciseAttributes.exerciseWeight} onChange={updateFormValues} />
-            </div>
-        </div>
-      </form>
-      <div className="features-list-container">
-            <button className="home-add-exercise"  onClick={handleSubmissionOfUpdate}>SUBMIT</button>
-            <button className="home-cancel-exercise" onClick={() => goBackToExercisePage(`/exercise-page/${specificWorkout}`)}>CANCEL</button>
-        </div>
-    </div>
+    </Layout>
   );
 };
 
