@@ -25,7 +25,23 @@ function ExercisePage() {
     const fetchExercises = async () => {
         try {
             const response = await axios.get(`/exercise-page/data/${specificworkout}`);   
-            setData(response.data);  
+            //setData(response.data);  
+            let responseData = response.data;
+            let listOfWeights = []
+            for (let eachExercise of response.data) {
+                let convertWeight = await axios.get(`http://localhost:8080/api/convert/weight?value=${eachExercise.weight}&fromUnit=pounds&toUnit=kilograms`)
+                let dictionary = {
+                    sessionExercises: eachExercise.sessionExercises,
+                    exerciseInKg: convertWeight.data
+                }
+                listOfWeights.push(dictionary)
+            }
+            // credit to Henke @ https://stackoverflow.com/questions/46849286/merge-two-array-of-objects-based-on-a-key
+            const map = new Map();
+            responseData.forEach(item => map.set(item.sessionExercises, item));
+            listOfWeights.forEach(item => map.set(item.sessionExercises, {...map.get(item.sessionExercises), ...item}));
+            const mergeArrays = Array.from(map.values());
+            setData(mergeArrays);
         } catch (err) {
             console.error('Error fetching exercises from MySQL database:', err);
         }
@@ -66,7 +82,7 @@ function ExercisePage() {
                                     <th>Exercise</th>
                                     <th>Sets</th>
                                     <th>Repetitions</th>
-                                    <th>Weight (lbs)</th>
+                                    <th>Weight</th>
                                     <th>Specific Workout Session</th>
                                     <th>Delete</th>
                                     <th>Update</th>
@@ -78,7 +94,7 @@ function ExercisePage() {
                                         <th>{item.sessionExercises}</th>
                                         <th>{item.sets}</th>
                                         <th>{item.repetitions}</th>
-                                        <th>{item.weight}</th>
+                                        <th>{item.weight} lbs ({item.exerciseInKg} kg)</th>
                                         <th>{item.workout}</th>
                                         <th><RxBorderSolid onClick={() => 
                                             {
