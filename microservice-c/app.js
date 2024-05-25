@@ -47,7 +47,7 @@ app.put('/update-exercise/:specificWorkout/:sessionexercise', async (req, res) =
         if (err) {
             res.status(500).json({ error:  "Failed to update exercise" });
         } else {
-            res.send(result);
+            res.status(200).send(result);
         }
     })
 });
