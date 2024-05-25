@@ -33,7 +33,6 @@ function ContactUsPage() {
                 setTimeout(() => navigate("/"), 5000);
             }  else {
                 setHaveSubmitted(true);
-                setTimeout(() => window.location.reload(), 5000);
             }
         } catch (err) {
             console.error("Error submitting request for response back from team:", err);
@@ -83,9 +82,8 @@ function ContactUsPage() {
                                 </div> : 
                                 <div>
                                     <h4>We are Sorry!</h4>
-                                    <p>The email address {contactUs["userEmail"]} is not valid!</p>
+                                    <p>The email address you entered is not valid!</p>
                                     <p>Once you provide a valid email address, then your request for assistance will be properly sent to us!</p>
-                                    <p>Refreshing the page for you to enter your information again!</p>
                                 </div>
                                 }
                             </div> :
