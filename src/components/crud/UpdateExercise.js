@@ -44,8 +44,12 @@ function UpdateExercise() {
     const handleSubmissionOfUpdate = async (submit) => {
         submit.preventDefault();
         try {
-            await axios.put(`http://localhost:3003/update-exercise/${specificWorkout}/${sessionexercise}`, exerciseAttributes);
-            goBackToExercisePage(`/exercise-page/${specificWorkout}`);
+            const response = await axios.put(`http://localhost:3003/update-exercise/${specificWorkout}/${sessionexercise}`, exerciseAttributes);
+            if (response.status === 200) {
+                setTimeout(() => goBackToExercisePage(`/exercise-page/${specificWorkout}`), 3000);
+            }  else {
+                setTimeout(() => goBackToExercisePage(`/under-construction`), 3000);
+            }
         } catch (err) {
             console.error("Failed to update exercise:", err);
         }
